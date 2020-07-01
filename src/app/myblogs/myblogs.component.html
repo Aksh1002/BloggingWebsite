@@ -1,0 +1,21 @@
+<div class="row mb-5">
+	<div class="col-sm-3 offset-sm-1">
+		<div class="card mt-5">
+			<img [src]="user.photoURL" alt=""
+			class="card-img-top">
+			<div class="card-body ">
+				<h4 class="card-title">{{ user.displayName | uppercase }}
+				</h4>
+
+				<a routerLink="/editprofile/{{user.uid}} " class="btn btn-sm btn-primary">Edit Profile</a>
+			</div>
+		</div>
+	</div>
+
+	<div class="col-sm-7">
+		<app-create (postcreated)="onpostcreated()"></app-create>
+
+		 <app-post *ngFor="let post of posts" [post]="post" (ondelete)="ondelete()"></app-post>
+
+	</div>
+</div>

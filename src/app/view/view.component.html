@@ -1,0 +1,13 @@
+ <!-- {{ postdata.contenttext.content[0].content[0].text.substring(0,50)   }} -->
+ <div class="row mt-5">
+ 	<div class="col-sm-8 offset-sm-2">
+ 		<h1>{{ post.title }}</h1>
+ 		<div [innerHTML]="pdata"></div>
+ 	</div>
+ </div>
+
+<div class="row mt-5">
+  <div class="col-sm-8 offset-sm-2">
+    <app-comments [postid]="postid"></app-comments>
+  </div>
+</div>

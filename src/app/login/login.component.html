@@ -1,0 +1,50 @@
+
+	<div class="row justify-content-md-center background">
+		<div class="col-sm-4 col-sm-4">
+			<div class="card text-blank border-0">
+				<div class="card-body">
+
+						<div class="card-title text-center">
+							<h5>Login</h5>
+						</div>
+
+						<div class="card-text">
+							<form [formGroup]="myform" (ngSubmit)="onsubmit(myform)">
+								<div class="form-group">
+
+									<input type="email" class="form-control" placeholder="Enter Your Email"
+									[formControl]="myform.controls['email']">
+								</div>
+								<div class="alert alert-danger"
+								*ngIf="(myform.controls['email'].invalid)&&(myform.controls['email'].touched)">
+									Enter Valid Email
+								</div>
+
+								<div class="form-group">
+									<input type="password" class="form-control" placeholder="Enter Your Password"
+									[formControl]="myform.controls['password']">
+								</div>
+								
+								<div class="alert alert-danger"
+								*ngIf="(myform.controls['password'].invalid)&&(myform.controls['password'].touched)">
+									Password should be 8 character long
+								</div>
+								
+								<div class="text-center">
+									<button type="submit" class="btn btn-block btn-warning"
+									[disabled]="(myform.invalid)&&(myform.touched)">
+										Login
+									</button>
+								</div>
+							</form>
+							<div class="text-center mt-3">
+								<button class="btn btn-link"
+								routerLink="/home">Don't have an account? Create One</button>
+							</div>
+						</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
